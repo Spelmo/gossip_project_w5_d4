@@ -1,0 +1,29 @@
+<div class="center jumbotron">
+<h1>Edite le potin n°<%= @index %></h1>
+<br>
+
+
+<%= form_for @gossip do |f| %>
+
+  <div class="form-group">
+    <label for="formGroupExampleInput">Quel est ton pseudo :</label>
+    <%= f.text_field :anonymous_gossiper, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label for="formGroupExampleInput">Le nouveau titre :</label>
+    <%= f.text_area :title, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label for="formGroupExampleInput">Le nouveau gossip :</label>
+    <%= f.text_area :content, class: "form-control" %>
+  </div>
+
+    <%= f.submit "Update", class: "btn btn-primary" %>
+
+<% end %>
+
+
+
+</div>

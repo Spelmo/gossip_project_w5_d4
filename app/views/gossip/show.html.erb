@@ -1,0 +1,22 @@
+<div class="center jumbotron">
+
+
+   <h1>The Gossip Project</h1>
+   <br>
+   <p>
+    Titre : <%= Gossip.find(@id).title%>
+    <br>
+    Potin: <%= Gossip.find(@id).content%>
+    <br>
+    Date de création :  <%=Gossip.find(@id).created_at%>
+   </p>
+
+
+     <%= link_to "Editer", edit_gossip_path %>
+<br> <br>
+     <%= link_to 'Supprimer', @gossip, method: :delete %>
+<br><br>
+     <%= link_to "Index", '#' %>
+
+
+</div>

@@ -1,5 +1,5 @@
 class GossipController < ApplicationController
- def /index
+ def index
  end
 
  def new
@@ -14,19 +14,32 @@ class GossipController < ApplicationController
    puts @index
  end
 
- def edit
- end
-
  def show
+  @id = params["id"]
+  @gossip = Gossip.find(@id)
  end
 
- def update
- end
+ def edit
+   @index = params["id"]
+   @gossip = Gossip.find(@index)
+end
 
  def update
+    @index = params["id"]
+    @gossip = Gossip.find(@index)
+    newpar = params["gossip"]
+    @gossip.anonymous_gossiper = newpar["anonymous_gossiper"]
+   	@gossip.title = newpar["title"]
+    @gossip.content = newpar["content"]
+    @gossip.save
  end
+
 
  def destroy
+   @index = params["id"]
+   @gossip = Gossip.find(@index)
+   @gossip.delete
+   redirect_to gossip_index_path
  end
 
 end
