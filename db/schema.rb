@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_31_152922) do
+ActiveRecord::Schema.define(version: 2018_10_31_174008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,11 @@ ActiveRecord::Schema.define(version: 2018_10_31_152922) do
     t.bigint "user_id"
     t.string "anonymous_gossiper"
     t.index ["user_id"], name: "index_gossips_on_user_id"
+  end
+
+  create_table "gossips_tags", id: false, force: :cascade do |t|
+    t.bigint "gossip_id", null: false
+    t.bigint "tag_id", null: false
   end
 
   create_table "likes", force: :cascade do |t|
