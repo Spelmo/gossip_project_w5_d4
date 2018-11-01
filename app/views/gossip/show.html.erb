@@ -16,10 +16,11 @@
 <br> <br>
      <%= link_to 'Supprimer', @gossip, method: :delete %>
 <br><br>
-     <%= link_to "Index", '#' %>
+     <%= link_to "Index", gossip_index_path %>
 
-
- <br> <br>
+     <br> <br>
+    <h4> <%= @gossip.likes.count %> <%= link_to "👍🏻", likes_path %></h4>
+ <br>
 <h4> <%= @gossip.comments.count %> Commentaires</h4>
 
 <% Comment.all do |comment| %>
