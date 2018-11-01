@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+a = Gossip.new
+a.title = "THP"
+a.content ="Il parait que THP c'est de la bombe."
+a.save
+
+a = Gossip.new
+a.title = "Jeux-vidéos"
+a.content ="Il parait que les jeux vidéo rendent intelligent."
+a.save

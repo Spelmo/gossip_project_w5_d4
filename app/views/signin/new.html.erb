@@ -1,0 +1,28 @@
+<div class="center jumbotron">
+  <h1>Connecte-toi</h1>
+  <br>
+  <div><%= flash[:info] %>
+    <br>
+  Pas encore enregistré ? <%= link_to 'Enregistre-toi !', registration_new_path %>
+  <br> <br>
+
+
+  <div class="form-row">
+    <%= form_tag("/signin", method: :post, class: "col-md-6") do %>
+
+    <div class="form-group col-md-12">
+      <%= label_tag 'Votre adresse mail' %>
+      <%= text_field_tag 'email', nil, class: "form-control", rows: "3" %>
+    </div>
+
+    <div class="form-group col-md-12">
+      <%= label_tag 'Mot de passe' %>
+      <%= text_field_tag 'password', nil, class: "form-control", rows: "3" %>
+    </div>
+
+      <div class="form-group col-md-12">
+        <%= submit_tag "Se connecter", class: "btn btn-primary" %>
+      </div>
+      <% end %>
+  </div>
+</div>

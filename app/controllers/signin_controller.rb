@@ -1,8 +1,6 @@
-class StaticPagesController< ApplicationController
-  def home
-    if session[:user_id]
-      @current_user = User.find(session[:user_id])
-    end
+class SigninController < ApplicationController
+
+  def new
   end
 
   def create
@@ -19,4 +17,5 @@ class StaticPagesController< ApplicationController
    def login
 
    end
+
 end
