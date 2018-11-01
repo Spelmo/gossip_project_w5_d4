@@ -18,26 +18,24 @@
 <br><br>
      <%= link_to "Index", '#' %>
 
+
+ <br> <br>
+<h4> <%= @gossip.comments.count %> Commentaires</h4>
+
+<% Comment.all do |comment| %>
+  <% if comment.gossip_id = @id %>
+    <p>
+      <div class="card" style="width: 18rem;">
+      <h5 class="card-title"><%=comment.user.username%></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%=gossip.content%></h6>
+      <%=gossip.content%>
+    </div>
+    </p>
+    <% end %>
+  <% end %>
+
+
 <br><br>
-<h2> Commente </h2>
-     <div class="form-row">
-       <%= form_tag("/gossip", method: :post, class: "col-md-6") do %>
-       <div class="form-group col-md-12">
-         <%= label_tag 'Titre' %>
-         <%= text_field_tag 'title', nil, class: "form-control" %>
-       </div>
-       <div class="form-group col-md-12">
-         <%= label_tag 'Votre gossip' %>
-         <%= text_area_tag 'content', nil, placeholder:'Il parait que ...', class: "form-control", rows: "3" %>
-       </div>
-
-         <div class="form-group col-md-12">
-           <%= submit_tag "Envoyer", class: "btn btn-primary" %>
-         </div>
-         <% end %>
-     </div>
-
-<br> <br>
-  <h3> commentaires </h3>
-
-</div>
+<h5> Quelque chose à dire ? </h5>
+<br>
+<%= render 'comment/form' %>

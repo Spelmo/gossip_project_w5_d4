@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :registration, only: [:new, :create]
   resources :gossip
+  resources :comment
+
   get 'signin/new', to:  'signin#new'
   get 'signin' => 'signin#login'
   post 'signin' => 'signin#create'

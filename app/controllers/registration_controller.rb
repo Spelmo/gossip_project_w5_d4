@@ -8,6 +8,6 @@ class RegistrationController < ApplicationController
     user.email = params["email"]
     user.password = params["password"]
     user.save
-    @username= user["username"]
+    @username = user["username"]
   end
 end

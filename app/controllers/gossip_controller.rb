@@ -27,11 +27,13 @@ end
  def update
     @index = params["id"]
     @gossip = Gossip.find(@index)
-    newpar = params["gossip"]
-    @gossip.anonymous_gossiper = newpar["anonymous_gossiper"]
-   	@gossip.title = newpar["title"]
-    @gossip.content = newpar["content"]
-    @gossip.save
+    if @gossip.user_id = $current_user
+      newpar = params["gossip"]
+      @gossip.anonymous_gossiper = newpar["anonymous_gossiper"]
+   	  @gossip.title = newpar["title"]
+      @gossip.content = newpar["content"]
+      @gossip.save
+    end
  end
 
 

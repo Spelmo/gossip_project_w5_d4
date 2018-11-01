@@ -13,6 +13,7 @@
             <h5 class="card-title"><%=gossip.title%></h5>
             <h6 class="card-subtitle mb-2 text-muted"><%=gossip.created_at%></h6>
             <%=gossip.content%>
+            <h8 class="card-subtitle mb-2 text-muted"><%= gossip.comments.count %> commentaires </h8>
             <a href='/gossip/<%=gossip.id%>' class="card-link">Voir le potin</a>
           </div>
           </p>
